@@ -14,7 +14,7 @@ public class SharedQueue {
             PrintJob toDO = printJobs.remove(0); // Removing the PrintJob to be carried out from the array
             return toDO;
         }
-        System.out.println("No file to print!");
+        System.out.println("Nothing to print!");
         return null;
     }
 
