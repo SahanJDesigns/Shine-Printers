@@ -4,6 +4,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 class Computer extends Thread {
+    String name;
+
+    // Constructor
+    Computer(String name){
+        this.name = name;
+    }
+    
     // Method to create read a text file and add the content into a TextFile object
     public static TextFile ReadAFile(String filePath) {
         StringBuilder contentBuilder = new StringBuilder(); // Object to append the content of the file
@@ -19,7 +26,7 @@ class Computer extends Thread {
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
-        
+
         return new TextFile(contentBuilder.toString());
     }
 
