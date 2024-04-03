@@ -31,7 +31,7 @@ class Computer extends Thread {
     }
 
     // Method to submit a print job
-    public synchronized void  submitPrintJob(PrintJob printJob, SharedQueue sharedQueue){
+    public synchronized void  submitPrintJob(PrintJob printJob, SharedQueue sharedQueue) throws SharedQueueFullException{
         sharedQueue.addJob(printJob);
     }
 }
