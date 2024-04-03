@@ -6,6 +6,7 @@ public class SharedQueue {
     // Method to add a PrintJob to the array
     public synchronized void addJob(PrintJob job) {
         printJobs.add(job);
+        notifyAll();
     }
 
     // Method to return a PrintJob
