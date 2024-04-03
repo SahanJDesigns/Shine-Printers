@@ -5,11 +5,6 @@ import java.io.IOException;
 
 class Computer extends Thread {
     String name;
-
-    // Constructor
-    Computer(String name){
-        this.name = name;
-    }
     
     // Method to create read a text file and add the content into a TextFile object
     public static TextFile ReadAFile(String filePath) {
