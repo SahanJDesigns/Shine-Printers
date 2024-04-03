@@ -36,7 +36,7 @@ class Computer extends Thread {
     }
 
     // Method to submit a print job
-    public void submitPrintJob(PrintJob printJob, SharedQueue sharedQueue) throws InterruptedException {
+    public void submitPrintJob(PrintJob printJob, SharedQueue sharedQueue){
         sharedQueue.addJob(printJob);
     }
 }
