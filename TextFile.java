@@ -1,5 +1,3 @@
-import java.io.*;
-
 class TextFile {
     private String content;
 
