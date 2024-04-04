@@ -2,13 +2,13 @@ public class Main {
     public static void main(String arg[]){
         SharedQueue sharedQueue = new SharedQueue();
 
-
         Thread computer1 = new Computer(){
             @Override
             public void run() {
-                //reading the file
+                // Reading the file
                 TextFile file1 = ReadAFile("file_01");
-                //creating a print job and sending to print
+
+                // Creating a print job and sending it to print
                 try {
                     PrintJob printJob1 = new PrintJob(file1);
                     submitPrintJob(printJob1,sharedQueue);
@@ -21,9 +21,10 @@ public class Main {
         Thread computer2 = new Computer(){
             @Override
             public void run() {
-                //reading the file
+                // Reading the file
                 TextFile file2 = ReadAFile("file_02");
-                //creating a print job and sending to print
+
+                // Creating a print job and sending it to print
                 try {
                     PrintJob printJob2 = new PrintJob(file2);
                     submitPrintJob(printJob2,sharedQueue);
@@ -36,9 +37,10 @@ public class Main {
         Thread computer3 = new Computer(){
             @Override
             public void run() {
-                //reading the file
+                // Reading the file
                 TextFile file3 = ReadAFile("file_03");
-                //creating a print job and sending to print
+
+                // Creating a print job and sending it to print
                 try {
                     PrintJob printJob3 = new PrintJob(file3);
                     submitPrintJob(printJob3,sharedQueue);
@@ -79,7 +81,6 @@ public class Main {
                 }
             };
         };
-
 
         computer1.start();
         computer2.start();
