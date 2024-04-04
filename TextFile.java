@@ -8,8 +8,6 @@ class TextFile {
     public String getContent() {
         return content;
     }
-
-    
 }
 
 /*public class Main {

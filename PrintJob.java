@@ -1,7 +1,8 @@
 public class PrintJob {
     private TextFile file;
 
-    public PrintJob(Object file) throws TypeNotSupportedException {
+    // Constructor
+    PrintJob(Object file) throws TypeNotSupportedException {
         if (file instanceof TextFile) {
             this.file = (TextFile) file;
         } else {
@@ -9,8 +10,8 @@ public class PrintJob {
         }
     }
 
+    // Method to carry out a print job
     public synchronized void Print(){
         System.out.println(file.getContent());
-    }
-    
+    }   
 }

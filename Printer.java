@@ -12,7 +12,7 @@ class Printer extends Thread {
         this.printJob = printJob;
     }
 
-    // Method to print 
+    // Method to print a PrintJob
     public void printPrinter(){
         printJob.Print();
     }
