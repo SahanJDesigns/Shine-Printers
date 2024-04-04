@@ -17,4 +17,8 @@ public class SharedQueue {
         System.out.println("No file to print!");
         return null;
     }
+
+    public synchronized boolean isEmpty() {
+        return printJobs.isEmpty();
+    }
 }

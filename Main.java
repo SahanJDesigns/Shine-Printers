@@ -3,7 +3,7 @@ public class Main {
         SharedQueue sharedQueue = new SharedQueue();
 
 
-        Thread computer = new Computer(){
+        Thread computer1 = new Computer(){
             @Override
             public void run() {
                 //reading the file
@@ -37,7 +37,7 @@ public class Main {
             @Override
             public void run() {
                 //reading the file
-                TextFile file3 = ReadAFile("file_01");
+                TextFile file3 = ReadAFile("file_03");
                 //creating a print job and sending to print
                 try {
                     PrintJob printJob3 = new PrintJob(file3);
@@ -48,5 +48,43 @@ public class Main {
             }
         };
 
+        Thread printer1 = new Printer(){
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                while(!sharedQueue.isEmpty()){
+                    getPrintJob(sharedQueue);
+                    printPrinter();
+                }
+            };
+        };
+
+        Thread printer2 = new Printer(){
+            @Override
+            public void run() {
+                while(!sharedQueue.isEmpty()){
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    getPrintJob(sharedQueue);
+                    printPrinter();
+                }
+            };
+        };
+
+
+        computer1.start();
+        computer2.start();
+        computer3.start();
+        printer1.start();
+        printer2.start();
     }
 }
