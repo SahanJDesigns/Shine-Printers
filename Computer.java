@@ -9,7 +9,7 @@ class Computer extends Thread {
     // Method to create read a text file and add the content into a TextFile object
     public static TextFile ReadAFile(String filePath) {
         StringBuilder contentBuilder = new StringBuilder(); // Object to append the content of the file
-
+        
         try {
             File file = new File(filePath);
             BufferedReader reader = new BufferedReader(new FileReader(file));
