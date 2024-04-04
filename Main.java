@@ -5,10 +5,10 @@ public class Main {
         Thread computer1 = new Computer(){
             @Override
             public void run() {
-                //reading the file
+                // Reading the file
                 for(int i=0;i<100;i++){
                     TextFile file1 = ReadAFile("Files\\file"+(i+1)+".txt");
-                    //creating a print job and sending to print
+                    // Creating a print job and sending it to print
                     try {
                         PrintJob printJob1 = new PrintJob(file1);
                         submitPrintJob(printJob1,sharedQueue);
@@ -22,10 +22,10 @@ public class Main {
         Thread computer2 = new Computer(){
             @Override
             public void run() {
-            //reading the file
+            // Reading the file
             for(int i=100;i<200;i++){
                     TextFile file1 = ReadAFile("Files\\file"+(i+1)+".txt");
-                    //creating a print job and sending to print
+                    // Creating a print job and sending it to print
                     try {
                         PrintJob printJob1 = new PrintJob(file1);
                         submitPrintJob(printJob1,sharedQueue);
@@ -40,10 +40,10 @@ public class Main {
         Thread computer3 = new Computer(){
             @Override
             public void run() {
-                //reading the file
+                // Reading the file
                 for(int i=200;i<300;i++){
                     TextFile file1 = ReadAFile("Files\\file"+(i+1)+".txt");
-                    //creating a print job and sending to print
+                    // Creating a print job and sending it to print
                     try {
                         PrintJob printJob1 = new PrintJob(file1);
                         submitPrintJob(printJob1,sharedQueue);
@@ -53,7 +53,6 @@ public class Main {
                 }
             }
         };
- 
 
         Thread printer1 = new Printer() {
             @Override
@@ -71,7 +70,7 @@ public class Main {
                             try {
                                 sharedQueue.wait(2000);
                                 if(sharedQueue.isEmpty()){
-                                    System.out.println("No print job notified within 1000ms. shutting down the Printer 01.");
+                                    System.out.println("No print job notified within 1000ms. Shutting down the Printer 01.");
                                     break;
                                 }
                             } catch (InterruptedException e) {
@@ -89,7 +88,6 @@ public class Main {
         Thread printer2 = new Printer() {
             @Override
             public void run() {
-
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -102,7 +100,7 @@ public class Main {
                             try {
                                 sharedQueue.wait(2000);
                                 if(sharedQueue.isEmpty()){
-                                    System.out.println("No print job notified within 1000ms. shutting down the Printer 02.");
+                                    System.out.println("No print job notified within 1000ms. Shutting down the Printer 02.");
                                     break;
                                 }
                             } catch (InterruptedException e) {
